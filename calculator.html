@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document object model</title>
+    <style>
+        .container{
+            width: 50vw;
+            height: 100vh;
+            margin: auto;
+        }
+        .box{
+            width: 50%;
+            margin: auto;
+           
+        }
+        .btn{
+            width: 15%;
+            height: 30px;
+            background-color: goldenrod;
+            border-radius: 40px;
+        }
+        #input{
+            width: 60%;
+            height: 40px;
+            background-color: goldenrod;
+            border-radius: 40px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+   <h1 >Calculator</h1>
+   <div class="box">
+    <form>
+        <input type="text"  id='input'>
+    </form>
+    
+    <div>
+    <button class="btn" onclick="Result(1)">1</button>
+    <button class="btn"  onclick="Result(2)">2</button>
+    <button class="btn"  onclick="Result(3)">3</button>
+    <button class="btn"  onclick="Result(4)">4</button>
+</div>
+<div>
+    <button class="btn"  onclick="Result(5)">5</button>
+    <button class="btn"  onclick="Result(6)">6</button>
+    <button class="btn"  onclick="Result(7)">7</button>
+    <button class="btn"  onclick="Result(8)">8</button>
+</div>
+<div>
+    <button class="btn"  onclick="Result(9)">9</button>
+    <button class="btn"  onclick="Result(0)">0</button>
+    <button class="btn"  onclick="Result('+')">+</button>
+    <button class="btn"  onclick="Result('-')">-</button>
+</div>
+<div>
+    <button class="btn"  onclick="Result('*')">*</button>
+    <button class="btn"  onclick="Result('/')">/</button>
+    <button class="btn"  onclick="Calculator()">=</button>
+    <button class="btn"  onclick="Clear()">C</button>
+</div>
+</div>
+</div>
+    <script>
+        function Result(value){
+            document.getElementById('input').value +=value;
+        };
+        function Calculator(){
+           let cal = document.getElementById('input').value;
+              
+              document.getElementById('input').value =  eval(cal);
+
+        }
+        function Clear(){
+            document.getElementById('input').value=' '
+        }
+        
+    </script>
+
+</body>
+</html>
